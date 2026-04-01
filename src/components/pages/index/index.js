@@ -752,7 +752,7 @@ class SlotMachine {
 		item.classList.add('active');
 
 		// Отримуємо значення
-		const value = parseInt(item.querySelector('button').textContent);
+		const value = parseInt(item.dataset.value);
 		this.showLines(value);
 	}
 
