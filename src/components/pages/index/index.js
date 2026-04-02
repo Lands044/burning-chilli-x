@@ -60,7 +60,8 @@ class SlotMachine {
 		// Звуки
 		this.sounds = {
 			spin: new Audio('@sound/spin.mp3'),
-			win: new Audio('@sound/win.mp3')
+			win: new Audio('@sound/win.mp3'),
+			select: new Audio('@sound/select.ogg')
 		};
 
 		// Іконки (8 типів)
@@ -760,6 +761,8 @@ class SlotMachine {
 		this.linesItems.forEach(li => li.classList.remove('active'));
 		// Додаємо active на поточний
 		item.classList.add('active');
+
+		this.playSound('select');
 
 		// Отримуємо значення
 		const value = parseInt(item.dataset.value);
