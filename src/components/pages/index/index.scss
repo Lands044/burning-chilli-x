@@ -82,7 +82,7 @@ $purple: #d358f9;
 		position: absolute;
 		top: -10%;
 		left: 50%;
-		transform: translateX(-50%);
+		transform: translateX(-47%);
 		max-width: 600px;
 		width: 100%;
 		z-index: 100;
@@ -112,6 +112,8 @@ $purple: #d358f9;
 		display: flex;
 		flex-direction: column;
 		gap: 15px;
+		opacity: 0;
+		pointer-events: none;
 
 		@media (max-width:toEm($mobile)){
 			display: none; 
@@ -119,9 +121,7 @@ $purple: #d358f9;
 	}
 
 	&__left {
-		@media (max-width:toEm($mobile)){
-			display: none; 
-		}
+		
 	}
 }
 
@@ -345,6 +345,10 @@ $purple: #d358f9;
 				display: none;
 			}
 		}
+
+		@media (max-width: toEm(390)) and (max-height: toEm(740)) {
+			height: calc(120px * 3);
+		}
 	}
 
 	// Стрічка з іконками для анімації обертання
@@ -373,8 +377,8 @@ $purple: #d358f9;
 			padding: 10px;
 		}
 
-		@media (max-width:toEm($mobileSmall)){
-			height: 140px;
+		@media (max-width: toEm(390)) and (max-height: toEm(740)){
+			height: 120px;
 		}
 
 		img {
