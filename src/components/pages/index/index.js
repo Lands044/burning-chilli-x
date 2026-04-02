@@ -684,6 +684,7 @@ class SlotMachine {
 	disableSpinButtons() {
 		this.spinButton.classList.add('disabled');
 		this.autoButton.classList.add('disabled');
+		this.linesItems.forEach(item => item.classList.add('locked'));
 	}
 
 	// Розблоковує кнопки спіну
@@ -694,6 +695,7 @@ class SlotMachine {
 
 		this.spinButton.classList.remove('disabled');
 		this.autoButton.classList.remove('disabled');
+		this.linesItems.forEach(item => item.classList.remove('locked'));
 	}
 
 	// Збільшення ставки
@@ -757,6 +759,8 @@ class SlotMachine {
 
 	// Обробка кліку на Lines
 	handleLinesClick(item) {
+		if (item.classList.contains('locked')) return;
+
 		// Знімаємо active з усіх
 		this.linesItems.forEach(li => li.classList.remove('active'));
 		// Додаємо active на поточний

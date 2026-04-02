@@ -222,6 +222,11 @@ $purple: #d358f9;
 			filter: brightness(0.8) saturate(0.7);
 		}
 
+		&.locked {
+			cursor: default;
+			pointer-events: none;
+		}
+
 		@media (max-width:toEm($mobileSmall)){
 			button img {
 				width: 80px;
