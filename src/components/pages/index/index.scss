@@ -1,7 +1,7 @@
 $red: #a01602;
 $gold: #fdc909;
 $bg-gold: #FFA500;
-$purple: #d358f9;
+$purple: #f8612a;
 
 %border {
 	border: 4px solid $gold;
@@ -306,9 +306,10 @@ $purple: #d358f9;
 	max-width: 1000px;
 	width: 100%;
 	background-color: $red;
-	border: 6px solid $gold;
+	// border: 6px solid $gold;
 	box-shadow: 0 0 6px rgba(246, 201, 139, 0.6);
 	padding: 10px;
+	border-radius: 16px;
 
 	&__spinner {
 		width: 100%;
@@ -321,6 +322,8 @@ $purple: #d358f9;
 		z-index: 10;
 		border: 6px solid $gold;
 		box-shadow: 0 0 6px rgba(246, 201, 139, 0.6);
+		border-radius: 12px;
+		overflow: hidden;
 
 		@media (max-width:toEm($mobile)){
 			grid-template-columns: repeat(3, 1fr); 
@@ -415,6 +418,34 @@ $purple: #d358f9;
 }
 
 // Вспишки при виграші
+.win-fire {
+	position: absolute;
+	inset: 0;
+	background: url('../../../assets/img/win-fire.webp') center / cover no-repeat;
+	pointer-events: none;
+	z-index: 1;
+	border-radius: 4px;
+	opacity: 0;
+	animation: winFireAppear 0.3s ease forwards;
+}
+
+@keyframes winFireAppear {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 0.75;
+		transform: scale(1);
+	}
+}
+
+// Icon above fire
+.drum__image.winning img {
+	position: relative;
+	z-index: 2;
+}
+
 .win-flash {
 	position: absolute;
 	width: 20px;

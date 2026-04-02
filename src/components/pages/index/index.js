@@ -60,7 +60,7 @@ class SlotMachine {
 		// Звуки
 		this.sounds = {
 			spin: new Audio('@sound/spin.mp3'),
-			win: new Audio('@sound/win.mp3'),
+			win: new Audio('@sound/win.ogg'),
 			select: new Audio('@sound/select.ogg')
 		};
 
@@ -124,7 +124,7 @@ class SlotMachine {
 						[5, 8, 2, 1],
 						[3, 4, 8, 4],
 						[1, 4, 8, 6],
-						[5, 3, 6, 7]
+						[5, 3, 6, 8]
 					]
 				}
 			],
@@ -156,7 +156,7 @@ class SlotMachine {
 					// Виграшна лінія: середній рядок
 					winLine: [2, 1, 1],
 					result: [
-						[8, 5, 7],
+						[8, 5, 8],
 						[3, 8, 6],
 						[6, 8, 4]
 					]
@@ -589,8 +589,11 @@ class SlotMachine {
 				if (!icon) continue;
 
 				if (winRowIndex !== null && i === winRowIndex) {
-					// Виграшна іконка - додаємо хитання
+					// Виграшна іконка - додаємо хитання та фон вогню
 					icon.classList.add('winning');
+					const fire = document.createElement('div');
+					fire.className = 'win-fire';
+					icon.appendChild(fire);
 				} else {
 					// Невиграшна іконка - затемнюємо
 					icon.classList.add('dimmed');
@@ -604,6 +607,8 @@ class SlotMachine {
 		const icons = this.drumSpinner.querySelectorAll('.drum__image');
 		icons.forEach((icon) => {
 			icon.classList.remove('winning', 'dimmed');
+			const fire = icon.querySelector('.win-fire');
+			if (fire) fire.remove();
 		});
 	}
 
