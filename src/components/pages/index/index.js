@@ -32,7 +32,7 @@ class SlotMachine {
 		this.minBet = 0.60;
 		this.maxBet = 48.00;
 
-		// Брейкпоінти: desktop (>767.98px) та mobile (<=767.98px)
+		// Брейкпоінти: desktop (>767.98px), mobile (<=767.98px), mobileSmall (<=390px && <=740px height)
 		this.breakpoints = {
 			desktop: {
 				minWidth: 767.98,
@@ -45,6 +45,12 @@ class SlotMachine {
 				cols: 3,
 				rows: 3,
 				iconHeight: 140
+			},
+			mobileSmall: {
+				minWidth: 0,
+				cols: 3,
+				rows: 3,
+				iconHeight: 120
 			}
 		};
 
@@ -162,8 +168,12 @@ class SlotMachine {
 
 	getCurrentBreakpoint() {
 		const width = window.innerWidth;
+		const height = window.innerHeight;
 		if (width > this.breakpoints.desktop.minWidth) {
 			return 'desktop';
+		}
+		if (width <= 390 && height <= 740) {
+			return 'mobileSmall';
 		}
 		return 'mobile';
 	}
@@ -175,7 +185,7 @@ class SlotMachine {
 
 	getResultsForCurrentBreakpoint() {
 		const breakpoint = this.getCurrentBreakpoint();
-		return this.predefinedResults[breakpoint];
+		return this.predefinedResults[breakpoint] ?? this.predefinedResults['mobile'];
 	}
 
 	init() {
