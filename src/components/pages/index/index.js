@@ -181,7 +181,11 @@ class SlotMachine {
 
 	getConfigForCurrentBreakpoint() {
 		const breakpoint = this.getCurrentBreakpoint();
-		return { ...this.breakpoints[breakpoint], breakpoint };
+		const config = { ...this.breakpoints[breakpoint], breakpoint };
+		if (breakpoint === 'desktop' && window.innerHeight <= 800) {
+			config.iconHeight = 110;
+		}
+		return config;
 	}
 
 	getResultsForCurrentBreakpoint() {
