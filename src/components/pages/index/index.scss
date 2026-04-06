@@ -50,6 +50,8 @@ $purple: #f8612a;
 	background: url('../../../assets/img/bg.png') center/cover no-repeat;
 	min-height: 100vh;
 	min-height: 100dvh;
+	display: flex;
+	align-items: center;
 
 	&__container {
 		display: flex;
@@ -364,7 +366,7 @@ $purple: #f8612a;
 		}
 
 		@media (max-width: toEm(390)) and (max-height: toEm(740)) and (pointer: coarse) {
-			height: calc(120px * 3);
+			height: calc(105px * 3);
 		}
 	}
 
@@ -399,7 +401,7 @@ $purple: #f8612a;
 		}
 
 		@media (max-width: toEm(390)) and (max-height: toEm(740)) and (pointer: coarse){
-			height: 120px;
+			height: 105px;
 		}
 
 		img {
