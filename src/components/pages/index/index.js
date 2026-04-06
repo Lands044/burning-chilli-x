@@ -32,7 +32,7 @@ class SlotMachine {
 		this.minBet = 0.60;
 		this.maxBet = 48.00;
 
-		// Брейкпоінти: desktop (>767.98px), mobile (<=767.98px), mobileSmall (<=390px && <=740px height)
+		// Брейкпоінти: desktop (>767.98px), mobile (<=767.98px), mobileSmall (<=400px && <=760px height)
 		this.breakpoints = {
 			desktop: {
 				minWidth: 767.98,
@@ -50,7 +50,7 @@ class SlotMachine {
 				minWidth: 0,
 				cols: 3,
 				rows: 3,
-				iconHeight: 90
+				iconHeight: 105
 			}
 		};
 
@@ -174,7 +174,7 @@ class SlotMachine {
 		if (!isTouch || width > this.breakpoints.desktop.minWidth) {
 			return 'desktop';
 		}
-		if (width <= 390 && height <= 740) {
+		if (width <= 400 && height <= 760) {
 			return 'mobileSmall';
 		}
 		return 'mobile';
@@ -654,7 +654,7 @@ class SlotMachine {
 				this.drumSpinner.appendChild(flash);
 
 				setTimeout(() => flash.remove(), 600);
-			}, i * 90);
+			}, i * 105);
 		}
 	}
 
