@@ -50,7 +50,7 @@ class SlotMachine {
 				minWidth: 0,
 				cols: 3,
 				rows: 3,
-				iconHeight: 105
+				iconHeight: 90
 			}
 		};
 
@@ -654,7 +654,7 @@ class SlotMachine {
 				this.drumSpinner.appendChild(flash);
 
 				setTimeout(() => flash.remove(), 600);
-			}, i * 105);
+			}, i * 90);
 		}
 	}
 
