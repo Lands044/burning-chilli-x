@@ -115,6 +115,10 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 						src: 'files',
 						dest: './',
 					},
+					{
+						src: 'assets/sound',
+						dest: './assets',
+					},
 				],
 				silent: true
 			})] : []),

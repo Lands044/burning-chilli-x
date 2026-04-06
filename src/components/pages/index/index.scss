@@ -48,7 +48,8 @@ $purple: #f8612a;
 
 .page {
 	background: url('../../../assets/img/bg.png') center/cover no-repeat;
-	height: 100vh;
+	min-height: 100vh;
+	min-height: 100dvh;
 
 	&__container {
 		display: flex;
