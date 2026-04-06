@@ -266,3 +266,17 @@ export function formatDate(date, sepp) {
 	const year = d.getFullYear();
 	return `${day}${sepp}${month}${sepp}${year}`;
 }
+// Масштабування контенту під ширину макету (1440px) на десктопі
+export function scaleDesktop(designWidth = 1440) {
+	function apply() {
+		const isTouch = window.matchMedia('(pointer: coarse)').matches;
+		if (isTouch) {
+			document.documentElement.style.removeProperty('font-size');
+		} else {
+			const scale = window.innerWidth / designWidth;
+			document.documentElement.style.fontSize = `${scale * 16}px`;
+		}
+	}
+	window.addEventListener('resize', apply);
+	apply();
+}

@@ -11,7 +11,7 @@ $purple: #f8612a;
 	max-width: 112px;
 	width: 100%;
 
-	@media (max-width:toEm($mobile)){
+	@media (max-width:toEm($mobile)) and (pointer: coarse){
 		max-width: 100%; 
 	}
 }
@@ -29,7 +29,7 @@ $purple: #f8612a;
 	border-radius: 8px;
 	background-color: $red;
 
-	@media (max-width:toEm($mobileSmall)) {
+	@media (max-width:toEm($mobileSmall)) and (pointer: coarse) {
 		font-size: 16px;
 	}
 }
@@ -56,7 +56,7 @@ $purple: #f8612a;
 		justify-content: center;
 		height: 100%;
 
-		@media (max-width:toEm($mobile)){
+		@media (max-width:toEm($mobile)) and (pointer: coarse){
 			padding-top: 40px;
 			padding-bottom: 160px;
 			flex-direction: column;
@@ -92,7 +92,7 @@ $purple: #f8612a;
 			height: 100%;
 		}
 
-		@media (max-width:toEm($mobileSmall)){
+		@media (max-width:toEm($mobileSmall)) and (pointer: coarse){
 			top: -6%;
 		}
 	}
@@ -103,7 +103,7 @@ $purple: #f8612a;
 		justify-content: space-between;
 		gap: 15px;
 
-		@media (max-width:toEm($mobile)){
+		@media (max-width:toEm($mobile)) and (pointer: coarse){
 			flex-direction: column-reverse; 
 		}
 	}
@@ -115,7 +115,7 @@ $purple: #f8612a;
 		opacity: 0;
 		pointer-events: none;
 
-		@media (max-width:toEm($mobile)){
+		@media (max-width:toEm($mobile)) and (pointer: coarse){
 			display: none; 
 		}
 	}
@@ -149,7 +149,7 @@ $purple: #f8612a;
 		flex-shrink: 0;
 		padding-left: 40px;
 
-		@media (max-width:toEm($mobile)){
+		@media (max-width:toEm($mobile)) and (pointer: coarse){
 			display: none;
 		}
 	}
@@ -181,7 +181,7 @@ $purple: #f8612a;
 			box-shadow: -2px 0 8px rgba(253, 201, 9, 0.5);
 		}
 
-		@media (max-width:toEm($mobile)){
+		@media (max-width:toEm($mobile)) and (pointer: coarse){
 			flex-direction: row;
 
 			&::before {
@@ -211,7 +211,7 @@ $purple: #f8612a;
 				// filter: brightness(0.6) saturate(0.5);
 				display: block;
 
-				@media (max-height: toEm(800)) {
+				@media (max-height: toEm(800)) and (pointer: coarse) {
 					width: 125px;
 				}
 			}
@@ -231,7 +231,7 @@ $purple: #f8612a;
 			pointer-events: none;
 		}
 
-		@media (max-width:toEm($mobileSmall)){
+		@media (max-width:toEm($mobileSmall)) and (pointer: coarse){
 			button img {
 				width: 80px;
 			}
@@ -251,7 +251,7 @@ $purple: #f8612a;
 		transition: color 0.2s ease, -webkit-text-stroke 0.2s ease, text-shadow 0.2s ease;
 		line-height: 1;
 
-		@media (max-width:toEm($mobileSmall)){
+		@media (max-width:toEm($mobileSmall)) and (pointer: coarse){
 			font-size: 16px;
 		}
 	}
@@ -329,7 +329,7 @@ $purple: #f8612a;
 		border-radius: 12px;
 		overflow: hidden;
 
-		@media (max-width:toEm($mobile)){
+		@media (max-width:toEm($mobile)) and (pointer: coarse){
 			grid-template-columns: repeat(3, 1fr); 
 		}
 	}
@@ -348,11 +348,11 @@ $purple: #f8612a;
 			margin: 2px 0.5px;
 		}
 
-		@media (max-height: toEm(800)) {
+		@media (max-height: toEm(800)) and (pointer: coarse) {
 			height: calc(110px * 4);
 		}
 
-		@media (max-width:toEm($mobile)){
+		@media (max-width:toEm($mobile)) and (pointer: coarse){
 			// Висота для 3 іконок на mobile
 			height: calc(140px * 3);
 
@@ -362,7 +362,7 @@ $purple: #f8612a;
 			}
 		}
 
-		@media (max-width: toEm(390)) and (max-height: toEm(740)) {
+		@media (max-width: toEm(390)) and (max-height: toEm(740)) and (pointer: coarse) {
 			height: calc(120px * 3);
 		}
 	}
@@ -388,16 +388,16 @@ $purple: #f8612a;
 		height: 150px;
 		flex-shrink: 0;
 
-		@media (max-height: toEm(800)) {
+		@media (max-height: toEm(800)) and (pointer: coarse) {
 			height: 110px;
 		}
 
-		@media (max-width:toEm($mobile)){
+		@media (max-width:toEm($mobile)) and (pointer: coarse){
 			height: 140px;
 			padding: 10px;
 		}
 
-		@media (max-width: toEm(390)) and (max-height: toEm(740)){
+		@media (max-width: toEm(390)) and (max-height: toEm(740)) and (pointer: coarse){
 			height: 120px;
 		}
 
@@ -607,11 +607,11 @@ $purple: #f8612a;
 	font-weight: 500;
 	font-size: 20px;
 
-	@media (max-width:toEm($pc)){
+	@media (max-width:toEm($pc)) and (pointer: coarse){
 		height: auto;
 	}
 
-	@media (max-width:toEm($mobile)){
+	@media (max-width:toEm($mobile)) and (pointer: coarse){
 		padding: 0;
 	}
 
@@ -632,7 +632,7 @@ $purple: #f8612a;
 		align-items: center;
 		gap: 40px;
 
-		@media (max-width:toEm($mobile)){
+		@media (max-width:toEm($mobile)) and (pointer: coarse){
 			flex-direction: column;
 			gap: 10px; 
 			align-items: flex-end;
@@ -645,7 +645,7 @@ $purple: #f8612a;
 		flex-direction: column;
 		justify-content: center;
 
-		@media (max-width:toEm($mobile)){
+		@media (max-width:toEm($mobile)) and (pointer: coarse){
 			flex-direction: row;
 			align-items: center;
 			gap: 5px;
@@ -668,7 +668,7 @@ $purple: #f8612a;
 		transition: all 0.3s ease;
 		position: relative;
 
-		@media (max-width:toEm($mobile)){
+		@media (max-width:toEm($mobile)) and (pointer: coarse){
 			width: 60px;
 			height: 60px;
 		}
@@ -790,7 +790,7 @@ $purple: #f8612a;
 			display: inline-block;
 		}
 
-		@media (max-width:toEm($mobileM)){
+		@media (max-width:toEm($mobileM)) and (pointer: coarse){
 			gap: 0;
 		}
 	}
@@ -810,7 +810,7 @@ $purple: #f8612a;
 		width: 70px;
 		height: 70px;
 
-		@media (max-width:toEm($mobileSmall)){
+		@media (max-width:toEm($mobileSmall)) and (pointer: coarse){
 			width: 35px;
 			height: 35px;
 		}
@@ -823,7 +823,7 @@ $purple: #f8612a;
 		align-items: center;
 		justify-content: center;
 
-		@media (max-width:toEm($mobile)){
+		@media (max-width:toEm($mobile)) and (pointer: coarse){
 			width: 100px;
 			height: 100px;
 		}
@@ -899,7 +899,7 @@ $purple: #f8612a;
 		align-items: center;
 		justify-content: center;
 
-		@media (max-width:toEm($mobile)) {
+		@media (max-width:toEm($mobile)) and (pointer: coarse) {
 			padding: 40px 30px;
 			border-radius: 20px;
 			border-width: 3px;
@@ -917,7 +917,7 @@ $purple: #f8612a;
 		letter-spacing: 2px;
 		animation: titleGlow 2s ease-in-out infinite;
 
-		@media (max-width:toEm($mobile)) {
+		@media (max-width:toEm($mobile)) and (pointer: coarse) {
 			font-size: 24px;
 			margin-bottom: 15px;
 		}
@@ -930,7 +930,7 @@ $purple: #f8612a;
 		margin-bottom: 40px;
 		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 
-		@media (max-width:toEm($mobile)) {
+		@media (max-width:toEm($mobile)) and (pointer: coarse) {
 			font-size: 16px;
 			margin-bottom: 30px;
 		}

@@ -170,7 +170,8 @@ class SlotMachine {
 	getCurrentBreakpoint() {
 		const width = window.innerWidth;
 		const height = window.innerHeight;
-		if (width > this.breakpoints.desktop.minWidth) {
+		const isTouch = window.matchMedia('(pointer: coarse)').matches;
+		if (!isTouch || width > this.breakpoints.desktop.minWidth) {
 			return 'desktop';
 		}
 		if (width <= 390 && height <= 740) {
