@@ -405,7 +405,7 @@ $purple: #f8612a;
 			max-width: 100%;
 			max-height: 100%;
 			width: auto;
-			height: auto;
+			height: 100%;
 			object-fit: contain;
 		}
 	}
@@ -492,10 +492,7 @@ $purple: #f8612a;
 
 .win-line {
 	fill: none;
-	stroke: linear;
-	stroke: url(#winLineGradient);
 	stroke: #ffcc00;
-	stroke-width: 6;
 	stroke-linecap: round;
 	stroke-linejoin: round;
 	filter: drop-shadow(0 0 8px rgba(255, 200, 0, 0.8)) drop-shadow(0 0 15px rgba(255, 150, 0, 0.6));
@@ -505,29 +502,24 @@ $purple: #f8612a;
 .win-line-dot {
 	fill: #fff;
 	stroke: #ffcc00;
-	stroke-width: 3;
 	filter: drop-shadow(0 0 6px rgba(255, 200, 0, 0.9));
 	animation: dotPulse 0.4s ease-in-out infinite alternate;
 }
 
 @keyframes lineGlow {
 	from {
-		stroke-width: 5;
 		filter: drop-shadow(0 0 8px rgba(255, 200, 0, 0.8)) drop-shadow(0 0 15px rgba(255, 150, 0, 0.6));
 	}
 	to {
-		stroke-width: 8;
 		filter: drop-shadow(0 0 12px rgba(255, 200, 0, 1)) drop-shadow(0 0 25px rgba(255, 150, 0, 0.8));
 	}
 }
 
 @keyframes dotPulse {
 	from {
-		r: 6;
 		opacity: 0.8;
 	}
 	to {
-		r: 10;
 		opacity: 1;
 	}
 }
@@ -577,7 +569,6 @@ $purple: #f8612a;
 .payline {
 	fill: none;
 	stroke: $gold;
-	stroke-width: 5;
 	stroke-linecap: round;
 	stroke-linejoin: round;
 	paint-order: stroke fill;
@@ -588,7 +579,6 @@ $purple: #f8612a;
 .payline-stroke {
 	fill: none;
 	stroke: #d53404;
-	stroke-width: 9;
 	stroke-linecap: round;
 	stroke-linejoin: round;
 }

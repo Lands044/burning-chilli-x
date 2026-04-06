@@ -36,11 +36,15 @@ class ConfettiAnimation {
 
 				reinit() {
 					this.position = this.parent.position.copy();
-					this.position.y = p.random(-20, -100);
+					this.position.y = p.random(-p.height * 0.025, -p.height * 0.125);
 					this.position.x = p.random(0, p.width);
-					this.velocite = p.createVector(p.random(-6, 6), p.random(-10, 2));
+					this.velocite = p.createVector(
+						p.random(-p.width * 0.004, p.width * 0.004),
+						p.random(-p.height * 0.0125, p.height * 0.0025)
+					);
 					this.friction = p.random(0.995, 0.98);
-					this.taille = p.round(p.random(5, 15));
+					// розмір відносний до ширини вікна — не залежить від zoom
+					this.taille = p.round(p.random(p.width * 0.004, p.width * 0.012));
 					this.moitie = this.taille / 2;
 					this.couleur = p.color(p.random(themeCouleur));
 				}
@@ -89,7 +93,7 @@ class ConfettiAnimation {
 				constructor(nombreMax, position) {
 					this.position = position.copy();
 					this.nombreMax = nombreMax;
-					this.gravite = p.createVector(0, 0.1);
+					this.gravite = p.createVector(0, p.height * 0.000125);
 					this.friction = 0.98;
 					this.particules = [];
 

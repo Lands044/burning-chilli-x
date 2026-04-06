@@ -156,9 +156,9 @@ class SlotMachine {
 					// Виграшна лінія: середній рядок
 					winLine: [2, 1, 1],
 					result: [
-						[8, 5, 8],
-						[3, 8, 6],
-						[6, 8, 4]
+						[1, 5, 8],
+						[3, 8, 2],
+						[2, 8, 4]
 					]
 				}
 			]
@@ -296,10 +296,19 @@ class SlotMachine {
 		this.initializePositions();
 	}
 
+	// Повертає реальну висоту іконки з DOM
+	getIconHeight() {
+		const firstIcon = this.drumSpinner.querySelector('.drum__image');
+		if (firstIcon) {
+			return firstIcon.getBoundingClientRect().height;
+		}
+		return this.config.iconHeight;
+	}
+
 	// Встановлює початкові позиції стрічок
 	initializePositions() {
 		const columns = this.drumSpinner.querySelectorAll('.drum__column');
-		const iconHeight = this.config.iconHeight;
+		const iconHeight = this.getIconHeight();
 
 		columns.forEach((column) => {
 			const strip = column.querySelector('.drum__strip');
@@ -395,7 +404,7 @@ class SlotMachine {
 	// Анімація обертання однієї колонки
 	spinColumn(column, targetIcons, duration, colIndex) {
 		const strip = column.querySelector('.drum__strip');
-		const iconHeight = this.config.iconHeight;
+		const iconHeight = this.getIconHeight();
 		const rows = this.config.rows;
 
 		// Знаходимо позицію потрібної послідовності в стрічці
@@ -508,8 +517,12 @@ class SlotMachine {
 	// Малює виграшну лінію через SVG
 	drawWinLine(winLine) {
 		const columns = this.drumSpinner.querySelectorAll('.drum__column');
-		const iconHeight = this.config.iconHeight;
+		const iconHeight = this.getIconHeight();
 		const spinnerRect = this.drumSpinner.getBoundingClientRect();
+		// stroke-width відносний до ширини барабана — не залежить від zoom
+		const sw = spinnerRect.width * 0.0075;
+		const swDot = spinnerRect.width * 0.004;
+		const rDot = spinnerRect.width * 0.01;
 
 		// Створюємо SVG елемент
 		const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -546,6 +559,7 @@ class SlotMachine {
 		const pointsStr = points.map(p => `${p.x},${p.y}`).join(' ');
 		polyline.setAttribute('points', pointsStr);
 		polyline.setAttribute('class', 'win-line');
+		polyline.style.strokeWidth = `${sw}px`;
 
 		svg.appendChild(polyline);
 
@@ -554,8 +568,9 @@ class SlotMachine {
 			const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
 			circle.setAttribute('cx', point.x);
 			circle.setAttribute('cy', point.y);
-			circle.setAttribute('r', '8');
+			circle.setAttribute('r', `${rDot}`);
 			circle.setAttribute('class', 'win-line-dot');
+			circle.style.strokeWidth = `${swDot}px`;
 			svg.appendChild(circle);
 		});
 
@@ -574,7 +589,7 @@ class SlotMachine {
 	applyWinIconEffects(winLine) {
 		const columns = this.drumSpinner.querySelectorAll('.drum__column');
 		const rows = this.config.rows;
-		const iconHeight = this.config.iconHeight;
+		const iconHeight = this.getIconHeight();
 
 		columns.forEach((column, colIndex) => {
 			const strip = column.querySelector('.drum__strip');
@@ -796,9 +811,11 @@ class SlotMachine {
 		const lines = this.linePatterns[value];
 		if (!lines) return;
 
-		const iconHeight = this.config.iconHeight;
+		const iconHeight = this.getIconHeight();
 		const spinnerRect = this.drumSpinner.getBoundingClientRect();
 		const columns = this.drumSpinner.querySelectorAll('.drum__column');
+		const swPayline = spinnerRect.width * 0.006;
+		const swPaylineStroke = spinnerRect.width * 0.011;
 
 		// Створюємо SVG контейнер
 		const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -836,12 +853,14 @@ class SlotMachine {
 			const strokeLine = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
 			strokeLine.setAttribute('points', pointsStr);
 			strokeLine.setAttribute('class', 'payline-stroke');
+			strokeLine.style.strokeWidth = `${swPaylineStroke}px`;
 			svg.appendChild(strokeLine);
 
 			// Створюємо золоту лінію (верхній шар)
 			const polyline = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
 			polyline.setAttribute('points', pointsStr);
 			polyline.setAttribute('class', 'payline');
+			polyline.style.strokeWidth = `${swPayline}px`;
 			svg.appendChild(polyline);
 		});
 
