@@ -368,7 +368,7 @@ $purple: #f8612a;
 			}
 		}
 
-		@media (max-width: toEm(400)) and (max-height: toEm(760)) and (pointer: coarse) {
+		@media (max-width: toEm($mobileSmall)) and (max-height: toEm(800)) and (pointer: coarse) {
 			height: calc(105px * 3) !important;
 		}
 	}
@@ -403,7 +403,7 @@ $purple: #f8612a;
 			padding: 10px;
 		}
 
-		@media (max-width: toEm(400)) and (max-height: toEm(760)) and (pointer: coarse){
+		@media (max-width: toEm($mobileSmall)) and (max-height: toEm(800)) and (pointer: coarse) {
 			height: 105px !important;
 		}
 

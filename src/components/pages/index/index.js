@@ -32,7 +32,7 @@ class SlotMachine {
 		this.minBet = 0.60;
 		this.maxBet = 48.00;
 
-		// Брейкпоінти: desktop (>767.98px), mobile (<=767.98px), mobileSmall (<=400px && <=760px height)
+		// Брейкпоінти: desktop (>767.98px), mobile (<=767.98px), mobileSmall (<=479.98 && <=800px height)
 		this.breakpoints = {
 			desktop: {
 				minWidth: 767.98,
@@ -174,7 +174,7 @@ class SlotMachine {
 		if (!isTouch || width > this.breakpoints.desktop.minWidth) {
 			return 'desktop';
 		}
-		if (width <= 400 && height <= 760) {
+		if (width <= 479.98 && height <= 800) {
 			return 'mobileSmall';
 		}
 		return 'mobile';
