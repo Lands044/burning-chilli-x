@@ -24,8 +24,6 @@ export const GAME_FIELDS = [
 	]],
 	['Підписи', [
 		{ path: 'texts.linesTitle', label: 'Заголовок Lines', type: 'text' },
-		{ path: 'texts.bestWin', label: 'Best Win', type: 'text' },
-		{ path: 'texts.bestMultiplier', label: 'Best Multiplier', type: 'text', hint: 'дозволено HTML (<span> — другий рядок)' },
 		{ path: 'texts.balanceLabel', label: 'Підпис балансу', type: 'text' },
 		{ path: 'texts.betLabel', label: 'Підпис ставки', type: 'text' },
 		{ path: 'texts.currency', label: 'Валюта', type: 'text' }

@@ -106,9 +106,6 @@ export const DEFAULT_CONFIG = {
 		popupText: "Ready to continue playing?",
 		ctaButton: "Download Now",
 		linesTitle: "Lines",
-		bestWin: "Best Win",
-		// HTML: the <span> moves "Multiplier" onto its own styled line.
-		bestMultiplier: "Best <span>Multiplier</span>",
 		balanceLabel: "Balance",
 		betLabel: "Total bet",
 		currency: "FUN"

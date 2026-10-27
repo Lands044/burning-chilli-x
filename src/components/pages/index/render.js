@@ -8,11 +8,6 @@ const setText = (selector, value) => {
 	})
 }
 
-const setHtml = (selector, value) => {
-	const element = document.querySelector(selector)
-	if (element && typeof value === 'string') element.innerHTML = value
-}
-
 const setImage = (selector, value, fallbackKey) => {
 	const element = document.querySelector(selector)
 	if (element) element.src = imageUrl(value, fallbackKey)
@@ -39,8 +34,6 @@ export function renderLanding(config) {
 	setBackground('.page', assets.background, 'bg')
 
 	setText('.lines__title', texts.linesTitle)
-	setHtml('.game__right .best:nth-child(1) .best__title', texts.bestWin)
-	setHtml('.game__right .best:nth-child(2) .best__title', texts.bestMultiplier)
 	setText('.menu__info .balance', texts.balanceLabel)
 	setText('.menu__credit p', texts.betLabel)
 	setText('.menu__info .value, .menu__credit .value', texts.currency)
